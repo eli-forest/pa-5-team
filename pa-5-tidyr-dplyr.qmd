@@ -78,11 +78,11 @@ data.
 ```{r}
 #| label: read-in-military-data
 
-military <- read_xlsx("data/gov_spending_per_capita.xlsx",  #comment
-                      sheet = "Share of Govt. spending",    #comment
-                      skip  = 7,                            #comment
-                      n_max = 191,                          #comment
-                      na = c("xxx", ".."))                  #comment
+military <- read_xlsx("data/gov_spending_per_capita.xlsx",  #comment reads in data
+                      sheet = "Share of Govt. spending",    #comment sheet name
+                      skip  = 7,                            #comment doesn't load the first 7 rows
+                      n_max = 191,                          #comment only loads up to row 191
+                      na = c("xxx", ". ."))                  #comment added n/a to all blank boxes
 ```
 
 *I would highly recommend you open the dataset in Excel, so you can see the data layout!*
