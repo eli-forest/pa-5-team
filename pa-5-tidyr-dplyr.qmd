@@ -214,6 +214,10 @@ eastern_europe <- c("Armenia",
                     "Moldova", 
                     "Russia", 
                     "Ukraine")
+military_long |>
+  filter(Country%in% eastern_europe) |> 
+  ggplot() +
+  geom_boxplot(aes(x = spending, y = Country, color = Country))
 
 # Hint - look at the code chunk `filter-regions` and Question 2 for code similar to what you will want to use to filter out just these countries.  
 
@@ -222,5 +226,7 @@ eastern_europe <- c("Armenia",
 ### Canvas Question 2 & Question 3
 
 **6. Looking at the plot you created above, which Eastern European country had the second highest median military expenditure?.**
+ Armania has the second highest median military expenditure.
 
 **7. Looking at the plot you created above, which Eastern European country had the largest variability in military expenditures over time?**
+ Georgia has the largest variability.
