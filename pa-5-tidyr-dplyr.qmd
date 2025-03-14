@@ -96,8 +96,7 @@ If you give the `Country` column a look, you'll see there are names of **contine
 simpler to find countries, as they contain no data.
 
 Luckily for us, these region names were also stored in the *"Regional totals"*
-sheet. We can use the `Region` column of this dataset to filter out the names we
-don't want.
+sheet. We can use the `Region` column of this dataset to filter out the names we don't want.
 
 Run the code below to read in the *"Regional totals"* data.
 
@@ -130,7 +129,7 @@ military_clean <- military |>
 
 **2. Write a sentence describing what the line of code `filter(!Country %in% regions)` is doing in the context of the data.**  
 
->Insert Answer Here
+> Its cleaning up the data by filtering the countries by pulling out from regions. 
 
 
 ### Canvas Question #1
@@ -143,8 +142,8 @@ military_clean <- military |>
 #| label: inspecting-what-regions-were-not-removed
 
 military_clean |> 
-  filter(if_all(.cols = _________,   #hint: what is the easiest way to include every column except `Country`
-                .fns = __________)   #hint: what function in R (there are several) tests if a value is missing or is NA?
+  filter(if_all(.cols = -Country,   #hint: what is the easiest way to include every column except `Country`
+                .fns = is.na)   #hint: what function in R (there are several) tests if a value is missing or is NA?
          )
 ```
 
